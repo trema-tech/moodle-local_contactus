@@ -1,0 +1,11 @@
+{
+    "name": "trema-tech/moodle-local_contactus",
+    "description": "Contact dynamic form",
+    "type": "moodle-local",
+    "require": {
+        "composer/installers": "~1.0"
+    },
+    "extra": {
+        "installer-name": "contactus"
+    }
+}

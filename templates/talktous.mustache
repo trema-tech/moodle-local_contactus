@@ -1,0 +1,50 @@
+<div id="page-wrapper">
+    <div id="form-talktous" class="col-xs-10 center">
+        <form method="post" action="{{action}}" class="talktousform">
+            <!--TODO: add Google recaptcha-->
+            <div class="form-group">
+                <label id="lb-name" for="name">{{#str}}name, local_talktous{{/str}}</label>
+                <input id="name" class="form-control" type="text" name="name" required
+                       value="{{#loggedin}}{{{user.firstname}}} {{{user.lastname}}}" readonly="readonly{{/loggedin}}"
+                        placeholder={{#quote}}{{#str}}name_plac, local_talktous{{/str}}{{/quote}}/>
+            </div>
+            <div class="form-group">
+                <label id="lb-email" for="email">{{#str}}email, local_talktous{{/str}}</label>
+                <input id="email" class="form-control" type="email" name="email" required
+                       value="{{#loggedin}}{{{user.email}}}" readonly="readonly{{/loggedin}}"
+                        placeholder={{#quote}}{{#str}}email_plac, local_talktous{{/str}}{{/quote}}/>
+            </div>
+
+            <div class="form-group">
+                <label id="lb-subject" for="subject">{{#str}}subject, local_talktous{{/str}}</label>
+                {{#enablesubject}}
+                    <select id="subject" class="form-control" name="subject" required>
+                        <option disabled>{{#str}}select, local_talktous{{/str}}</option>
+                        {{#subjects}}
+                            <option value="{{item}}">{{item}}</option>
+                        {{/subjects}}
+                    </select>
+                {{/enablesubject}}
+                {{^enablesubject}}
+                    <input id="subject" required class="form-control" type="text" name="subject"
+                            placeholder={{#quote}}{{#str}}subject_plac, local_talktous{{/str}}{{/quote}}/>
+                {{/enablesubject}}
+            </div>
+
+            <div class="form-group">
+                <label id="lb-message" for="message">{{#str}}message, local_talktous{{/str}}</label>
+                <textarea id="message" name="message" rows="7" required placeholder={{#quote}}{{#str}}message_plac,
+                          local_talktous{{/str}}{{/quote}}></textarea>
+            </div>
+
+            <div class="form-group">
+                <label id="warningmessage">{{#str}}warningmessage, local_talktous{{/str}}</label>
+                <button type="submit" class="btn btn-primary" value={{#quote}}{{#str}}submit,
+                        local_talktous{{/str}}{{/quote}}>{{#str}}submit, local_talktous{{/str}}</button>
+                <button type="reset" class="btn btn-primary" value={{#quote}}{{#str}}clear,
+                        local_talktous{{/str}}{{/quote}}>{{#str}}clear, local_talktous{{/str}}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
