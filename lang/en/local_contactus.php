@@ -41,5 +41,4 @@ $string['submit'] = 'Enviar';
 $string['warningmessage'] = 'Todos os campos são obrigatórios';
 //Sending mail
 $string['messagenotsent'] = 'Devido a problemas técnicos a sua mensagem não foi enviada.';
-$string['contactus_subject'] = 'Fale Conosco ICMBio';
 $string['contactus_name'] = 'Administrador Fale Conosco';

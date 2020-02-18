@@ -42,7 +42,7 @@ $messagetext .= "<p><b>" . get_string('senderemail', 'local_contactus') . "</b> 
 $messagetext .= "</p> <p><b>" . get_string('subject', 'local_contactus') . "</b> " . $subject;
 $messagetext .= "</p><hr><p><b>" . get_string('message', 'local_contactus') . "</b><br>" . $message . "</p><hr>";
 
-if (email_to_user($to, $email, "FALE CONOSCO ICMBio: {$subject}", "", $messagetext,
+if (email_to_user($to, $email, "{$CFG->sitename}: {$subject}", "", $messagetext,
 "", "", true, $email)) {
     $userid = empty($USER->id) ? -10 : $USER->id;
     $event = \local_contactus\event\send_email::create(array(
@@ -69,7 +69,7 @@ if (email_to_user($to, $email, "FALE CONOSCO ICMBio: {$subject}", "", $messagete
 
         //send one e-mail for user with the success
         $messagetext2 = "{$answer}<br><br><blockquote>{$messagetext}</blockquote>";
-        if (email_to_user($from, $to, "FALE CONOSCO ICMBio: {$subject}", "", $messagetext2, "", "",
+        if (email_to_user($from, $to, "{$CFG->sitename}: {$subject}", "", $messagetext2, "", "",
             true)) {
             $event = \local_contactus\event\send_email::create(array(
                 'userid' => $to->id,
